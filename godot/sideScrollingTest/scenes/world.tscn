@@ -13,6 +13,17 @@ size = Vector2(7.07431, 1.05)
 [node name="Players" parent="." instance=ExtResource("1_vhp88")]
 position = Vector2(232, 460)
 
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+visibility_layer = 524288
+z_index = -100
+offset_left = -1185.0
+offset_top = -355.0
+offset_right = 2295.0
+offset_bottom = 766.0
+texture = ExtResource("2_n6d15")
+stretch_mode = 1
+
 [node name="Platform" type="StaticBody2D" parent="."]
 position = Vector2(-49, -1)
 metadata/_edit_group_ = true
@@ -28,7 +39,7 @@ scale = Vector2(85, 40)
 shape = SubResource("RectangleShape2D_n1c45")
 
 [node name="Platform2" type="StaticBody2D" parent="."]
-position = Vector2(653, -58)
+position = Vector2(690, -64)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2"]
@@ -40,13 +51,3 @@ mesh = SubResource("QuadMesh_gg3fa")
 position = Vector2(538.342, 480)
 scale = Vector2(85, 40)
 shape = SubResource("RectangleShape2D_n1c45")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-show_behind_parent = true
-visibility_layer = 524288
-offset_left = -1185.0
-offset_top = -355.0
-offset_right = 2295.0
-offset_bottom = 766.0
-texture = ExtResource("2_n6d15")
-stretch_mode = 1
