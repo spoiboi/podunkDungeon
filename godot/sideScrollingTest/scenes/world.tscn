@@ -2,52 +2,33 @@
 
 [ext_resource type="PackedScene" uid="uid://dcgi1etsp0xx7" path="res://scenes/players.tscn" id="1_vhp88"]
 [ext_resource type="Texture2D" uid="uid://dtqur7pflm88j" path="res://assets/background.jpg" id="2_n6d15"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_gg3fa"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1c45"]
-size = Vector2(7.07431, 1.05)
+[ext_resource type="PackedScene" uid="uid://bcaob0h7psfq1" path="res://scenes/Platform.tscn" id="3_v0wjn"]
+[ext_resource type="PackedScene" uid="uid://2k2retxbgr80" path="res://scenes/Enemy.tscn" id="4_yvhik"]
 
 [node name="Worlds" type="Node2D"]
 
 [node name="Players" parent="." instance=ExtResource("1_vhp88")]
-position = Vector2(232, 460)
+position = Vector2(232, 500)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 show_behind_parent = true
 visibility_layer = 524288
 z_index = -100
-offset_left = -1185.0
-offset_top = -355.0
-offset_right = 2295.0
-offset_bottom = 766.0
+offset_left = -1188.0
+offset_top = -356.0
+offset_right = 2292.0
+offset_bottom = 765.0
 texture = ExtResource("2_n6d15")
 stretch_mode = 1
 
-[node name="Platform" type="StaticBody2D" parent="."]
-position = Vector2(-49, -1)
-metadata/_edit_group_ = true
+[node name="Platform" parent="." instance=ExtResource("3_v0wjn")]
+position = Vector2(411, 570)
+scale = Vector2(6, 1)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
-position = Vector2(540, 480)
-scale = Vector2(600, 40)
-mesh = SubResource("QuadMesh_gg3fa")
+[node name="Platform2" parent="." instance=ExtResource("3_v0wjn")]
+position = Vector2(1142, 504)
+scale = Vector2(6, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(538.342, 480)
-scale = Vector2(85, 40)
-shape = SubResource("RectangleShape2D_n1c45")
-
-[node name="Platform2" type="StaticBody2D" parent="."]
-position = Vector2(690, -64)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2"]
-position = Vector2(540, 480)
-scale = Vector2(600, 40)
-mesh = SubResource("QuadMesh_gg3fa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
-position = Vector2(538.342, 480)
-scale = Vector2(85, 40)
-shape = SubResource("RectangleShape2D_n1c45")
+[node name="Enemy" parent="." instance=ExtResource("4_yvhik")]
+position = Vector2(889, 429)
+scale = Vector2(0.3, 0.3)

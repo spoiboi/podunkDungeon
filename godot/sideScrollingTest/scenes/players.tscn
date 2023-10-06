@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b65lljaitufs1" path="res://assets/sprite_3.png" id="5_xlk43"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvpbr"]
-size = Vector2(33, 76)
+size = Vector2(33, 73)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ecfd4"]
 animations = [{
@@ -39,14 +39,14 @@ position = Vector2(32, -5)
 script = ExtResource("1_7ba7i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(12.5, -42)
+position = Vector2(-36, -31.5)
 shape = SubResource("RectangleShape2D_bvpbr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, -112)
 
 [node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
-position = Vector2(11, -41)
+position = Vector2(-35, -32)
 scale = Vector2(2.375, 2.28125)
 sprite_frames = SubResource("SpriteFrames_ecfd4")
 animation = &"walk"
