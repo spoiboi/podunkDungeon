@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxv86hsn48e51"]
+
+[ext_resource type="Texture2D" uid="uid://cm3q4g7lmemsx" path="res://assets/carrot/carrotEnemy0.png" id="1_o2phe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47ns8"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_47ns8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o2phe")
