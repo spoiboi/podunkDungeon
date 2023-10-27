@@ -11,10 +11,10 @@
 show_behind_parent = true
 visibility_layer = 524288
 z_index = -100
-offset_left = -1188.0
-offset_top = -356.0
-offset_right = 2292.0
-offset_bottom = 765.0
+offset_left = -1201.0
+offset_top = -242.0
+offset_right = 2279.0
+offset_bottom = 879.0
 texture = ExtResource("2_n6d15")
 stretch_mode = 1
 
@@ -30,6 +30,5 @@ scale = Vector2(6, 1)
 position = Vector2(348, 272)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_wmihb")]
-position = Vector2(534, 496)
-
-[node name="CharacterBody2D" parent="CharacterBody2D" instance=ExtResource("4_wmihb")]
+position = Vector2(545, 490)
+scale = Vector2(3, 3)

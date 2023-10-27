@@ -22,17 +22,12 @@ func _physics_process(delta):
 	
 	##flip sprite
 	flipSprite()
-		
-	##applies movement
 	velocity.x = speed * horizontal_direction
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = -jump_force
-	
-	##applies animation	
+	whenJump()
 	assignState()
 	updateAnimation()
 	move_and_slide()
-	print($AttackArea.position.x)
+	
 	
 	
 func updateAnimation():
@@ -70,5 +65,11 @@ func whenAttack():
 	state = "attack"
 	var overlapping_areas = $AttackArea.get_overlapping_areas();
 	for area in overlapping_areas:
-		var parent = area.get_parent()
+		#var parent = area.get_parent()
 		print("Hit!")
+
+func whenJump():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = -jump_force
+	elif Input.is_action_just_pressed("jump") and velocity.y <= 200:
+		velocity.y = -jump_force
