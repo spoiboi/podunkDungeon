@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var isForward = true
 var horizontal_direction
 @export var state = "idle"
+var hasJump = true
 
 func _physics_process(delta):
 	
@@ -27,7 +28,8 @@ func _physics_process(delta):
 	assignState()
 	updateAnimation()
 	move_and_slide()
-	
+	if is_on_floor():
+		hasJump = true
 	
 	
 func updateAnimation():
@@ -69,7 +71,9 @@ func whenAttack():
 		print("Hit!")
 
 func whenJump():
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and hasJump:
 		velocity.y = -jump_force
-	elif Input.is_action_just_pressed("jump") and velocity.y <= 200:
+		hasJump = false
+	elif Input.is_action_just_pressed("jump") and velocity.y <= 200 and hasJump:
 		velocity.y = -jump_force
+		hasJump = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cxb4gcdc64v3"]
+[gd_scene load_steps=17 format=3 uid="uid://cxb4gcdc64v3"]
 
 [ext_resource type="Script" path="res://player2.gd" id="1_2yngv"]
 [ext_resource type="Texture2D" uid="uid://ci5wvgswh5osm" path="res://assets/john2/John2_0.png" id="2_epp2h"]
@@ -28,6 +28,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("5_7macm"), ExtResource("6_3fq4v")]
+}
+
+[sub_resource type="Animation" id="Animation_v1d4a"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_8q163")]
 }
 
 [sub_resource type="Animation" id="Animation_nod8o"]
@@ -80,6 +95,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lxq5l"]
 _data = {
 "attack": SubResource("Animation_3t14d"),
+"fall": SubResource("Animation_v1d4a"),
 "idle": SubResource("Animation_nod8o"),
 "jump": SubResource("Animation_ereke"),
 "walk": SubResource("Animation_qsfqn")
@@ -107,7 +123,7 @@ texture = SubResource("CanvasTexture_n2u6s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(15, 0)
-texture = ExtResource("2_epp2h")
+texture = ExtResource("3_8q163")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -119,6 +135,6 @@ position = Vector2(33, -1)
 scale = Vector2(10, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(-0.0999999, 0.2)
+position = Vector2(0.3, 0.2)
 shape = SubResource("RectangleShape2D_5p5xo")
 debug_color = Color(0.929412, 0, 0.654902, 0.419608)
