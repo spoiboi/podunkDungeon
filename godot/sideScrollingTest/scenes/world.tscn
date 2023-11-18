@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dtqur7pflm88j" path="res://assets/background.jpg" id="2_n6d15"]
 [ext_resource type="PackedScene" uid="uid://bcaob0h7psfq1" path="res://scenes/Platform.tscn" id="3_v0wjn"]
 [ext_resource type="PackedScene" uid="uid://cxb4gcdc64v3" path="res://scenes/player_2.tscn" id="3_ychyd"]
-[ext_resource type="PackedScene" uid="uid://cxv86hsn48e51" path="res://dummyObject.tscn" id="4_wmihb"]
+[ext_resource type="PackedScene" uid="uid://2k2retxbgr80" path="res://scenes/Enemy.tscn" id="5_htb6c"]
 
 [node name="Worlds" type="Node2D"]
 
@@ -29,6 +29,6 @@ scale = Vector2(6, 1)
 [node name="player2" parent="." instance=ExtResource("3_ychyd")]
 position = Vector2(348, 272)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_wmihb")]
-position = Vector2(545, 490)
-scale = Vector2(3, 3)
+[node name="Enemy" parent="." instance=ExtResource("5_htb6c")]
+position = Vector2(282, 390)
+gravity = 200

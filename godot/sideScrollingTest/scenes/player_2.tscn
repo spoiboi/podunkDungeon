@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxb4gcdc64v3"]
+[gd_scene load_steps=18 format=3 uid="uid://cxb4gcdc64v3"]
 
 [ext_resource type="Script" path="res://player2.gd" id="1_2yngv"]
 [ext_resource type="Texture2D" uid="uid://ci5wvgswh5osm" path="res://assets/john2/John2_0.png" id="2_epp2h"]
@@ -104,6 +104,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5p5xo"]
 size = Vector2(4.5, 6.2)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru8vt"]
+size = Vector2(29, 65.5)
+
 [node name="player2" type="CharacterBody2D"]
 script = ExtResource("1_2yngv")
 
@@ -138,3 +141,9 @@ scale = Vector2(10, 10)
 position = Vector2(0.3, 0.2)
 shape = SubResource("RectangleShape2D_5p5xo")
 debug_color = Color(0.929412, 0, 0.654902, 0.419608)
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="hitboxson" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-1.5, 3.25)
+shape = SubResource("RectangleShape2D_ru8vt")
