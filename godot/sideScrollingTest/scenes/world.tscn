@@ -31,4 +31,3 @@ position = Vector2(348, 272)
 
 [node name="Enemy" parent="." instance=ExtResource("5_htb6c")]
 position = Vector2(282, 390)
-gravity = 200

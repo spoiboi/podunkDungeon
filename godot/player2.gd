@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var speed = 250
+@export var speed = 300
 @export var gravity = 20
 @export var jump_force = 500
 @export var isForward = true
@@ -95,8 +95,8 @@ func stun():
 		if area.get_parent().isEnemy():
 			death = true
 	if death:	
-		position.x=-888
-		position.y=384
+		position.x=100
+		position.y=100
 
 func die():
 	pass

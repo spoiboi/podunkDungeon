@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjqxjjfv0mnjx"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_1n2sv"]
+[ext_resource type="Texture2D" uid="uid://b4jq1eil5twu6" path="res://carrot/carrotEnemy0.png" id="2_7rm60"]
+[ext_resource type="Texture2D" uid="uid://ckbeyj16lwexa" path="res://carrot/carrotEnemy1.png" id="3_agb2y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wosp"]
+size = Vector2(15, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dlmb"]
+size = Vector2(19.2143, 20.0714)
+
+[sub_resource type="Animation" id="Animation_1strk"]
+resource_name = "walk"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_7rm60"), ExtResource("3_agb2y")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h7sge"]
+_data = {
+"walk": SubResource("Animation_1strk")
+}
+
+[node name="Enemy" type="CharacterBody2D"]
+position = Vector2(-3, -8)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_1n2sv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4wosp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7rm60")
+
+[node name="sight" type="RayCast2D" parent="."]
+position = Vector2(-8, 0)
+target_position = Vector2(0, 14)
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2(-18.5714, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(18.5714, 0)
+scale = Vector2(1, 0.8)
+shape = SubResource("RectangleShape2D_0dlmb")
+
+[node name="animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h7sge")
+}
